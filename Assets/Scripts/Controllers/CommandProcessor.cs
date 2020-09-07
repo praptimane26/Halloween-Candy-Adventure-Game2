@@ -16,26 +16,26 @@ public class CommandProcessor
     {
         String strResult = "Do not understand";
         pCmdStr = pCmdStr.ToLower();
-        String[] parts = pCmdStr.Split(' '); // tokenise the command
+        String[] parts = pCmdStr.Split(' '); 
         Location nextLocale;
 
         if (parts.Length > 0)
         {// process the tokens
             switch (parts[0])
             {
-                case "pick":
-                    if (parts[1] == "up")
-                    {
-                        Debug.Log("Got Pick up");
-                        strResult = "Got Pick up";
+                //case "pick":
+                //    if (parts[1] == "up")
+                //    {
+                //        Debug.Log("Got Pick up");
+                //        strResult = "Got Pick up";
 
-                        if (parts.Length == 3)
-                        {
-                            String param = parts[2];
-                        }// do pick up command
-                         // GameModel.Pickup();
-                    }
-                    break;
+                //        if (parts.Length == 3)
+                //        {
+                //            String param = parts[2];
+                //        }// do pick up command
+                //         // GameModel.Pickup();
+                //    }
+                //    break;
                 case "go":
                     switch (parts[1])
                     {
@@ -57,14 +57,18 @@ public class CommandProcessor
                             nextLocale = GameModel.currentLocale.getLocation("South");
                             if (nextLocale == null)
                                 strResult = GameModel.DisplayStory() + "\n Sorry can't go South";
+                            {
+                                GameModel.currentLocale = nextLocale;
+                                strResult = GameModel.DisplayStory();
+                            }
 
                             break;
-                        default:
-                            Debug.Log(" do not know how to go there");
-                            strResult = GameModel.DisplayStory();
-                            strResult += "\n \n Do not know how to go there";
+                        //default:
+                        //    Debug.Log(" do not know how to go there");
+                        //    strResult = GameModel.DisplayStory();
+                        //    strResult += "\n \n Do not know how to go there";
 
-                            break;
+                        //    break;
                     }// end switch
                     break;
                 default:

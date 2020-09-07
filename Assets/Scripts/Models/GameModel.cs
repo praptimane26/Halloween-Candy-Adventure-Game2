@@ -40,11 +40,11 @@ public static class GameModel
         currentLocale = new Location
         {
             Name = "Hospital Hallway",
-            Story = " It is a dark room, you hear something coming towards you\n You need to get out of this room before that thing comes any closer\n\n Try to 'go North' and maybe you will survive!"
+            Story = " It is a dark room, you hear something coming towards you\n You need to get out of this room before that thing comes any closer\n\n Hint : 'go North' and maybe you will survive!"
         };
         hospitalHallway = currentLocale;
 
-        hospitalHallway.addLocation("North", "MirrorRoom", "You're surrounded by mirrors, but there is a way to get out only if you figure out which mirror to look behind \n \n Hint 'go east'");
+        hospitalHallway.addLocation("North", "MirrorRoom", "You're surrounded by mirrors, but there is a way to get out only if you figure out which mirror to look behind \n \n Hint:'go south'");
 
 
         mirrorRoom = hospitalHallway.getLocation("North");
