@@ -13,6 +13,7 @@ public class Location
 
     public string Name { get => name; set => name = value; }
     public string Story { get => story; set => story = value; }
+    public int Id { get; set; }
 
     public void addLocation(string pDirection, string pName, string pStory)
     {

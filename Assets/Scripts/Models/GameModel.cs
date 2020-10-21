@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 
 
-
 using System.Text;
 using UnityEngine.UI;
 
@@ -33,6 +32,51 @@ public static class GameModel
     public static Location currentLocale;
     public static Location eastLocation;
     public static Player currentPlayer;
+    public static DataService ds = new DataService("HalloweenCandy.db");
+
+    public enum PasswdMode
+    {
+        NeedName,
+        NeedPassword,
+        OK,
+        AllBad
+    }
+
+    public static PasswdMode CheckPassword(string pName, string pPassword)
+    {
+        PasswdMode result = GameModel.PasswdMode.AllBad;
+
+        Player aPlayer = ds.getPlayer(pName);
+        if (aPlayer != null)
+        {
+            if (aPlayer.Password == pPassword)
+            {
+                result = GameModel.PasswdMode.OK;
+                GameModel.currentPlayer = aPlayer; // << WATCHOUT THIS IS A SIDE EFFECT
+                GameModel.currentLocale = GameModel.ds.GetPlayerLocation(GameModel.currentPlayer);
+            }
+            else
+            {
+                result = GameModel.PasswdMode.NeedPassword;
+            }
+        }
+        else
+            result = GameModel.PasswdMode.NeedName;
+
+        return result;
+    }
+
+    public static void RegisterPlayer(string pName, string pPassword)
+    {
+
+        GameModel.currentPlayer = GameModel.ds.storeNewPlayer(pName, pPassword, GameModel.currentLocale.Id, 100, 200);
+    }
+
+    public static void SetupGame()
+    {
+        ds.CreateDB();
+
+    }
 
     public static void MakeGame()
     {

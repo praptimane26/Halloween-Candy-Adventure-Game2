@@ -157,8 +157,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 129.98, y: 341}
-  m_SizeDelta: {x: 182.90002, y: 73.536255}
+  m_AnchoredPosition: {x: 119.4, y: 341}
+  m_SizeDelta: {x: 204.0459, y: 73.536255}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &320019676
 MonoBehaviour:
@@ -401,7 +401,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Maps
+  m_Text: MAP
 --- !u!222 &468685142
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -767,8 +767,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.8000261, y: 10}
-  m_SizeDelta: {x: 419.5934, y: 302.0748}
+  m_AnchoredPosition: {x: 0.79997, y: 10}
+  m_SizeDelta: {x: 441.25967, y: 302.0748}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1181180571
 MonoBehaviour:
@@ -1141,8 +1141,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -128.37993, y: 341}
-  m_SizeDelta: {x: 182.8999, y: 73.53375}
+  m_AnchoredPosition: {x: -116.7, y: 341}
+  m_SizeDelta: {x: 206.16034, y: 73.53375}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1861412541
 MonoBehaviour:
@@ -1391,7 +1391,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Inventory
+  m_Text: INVENTORY
 --- !u!222 &1968553088
 CanvasRenderer:
   m_ObjectHideFlags: 0
