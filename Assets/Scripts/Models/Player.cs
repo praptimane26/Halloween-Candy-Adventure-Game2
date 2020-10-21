@@ -12,6 +12,7 @@ public class Player
     private string password;
     // what about inventory?
 
+        public int PlayerID { get; set; }
     public string Name { get => name; set => name = value; }
     public int LocationId { get => location; set => location = value; }
     //public int LocationId { get => location; set => location = value; }

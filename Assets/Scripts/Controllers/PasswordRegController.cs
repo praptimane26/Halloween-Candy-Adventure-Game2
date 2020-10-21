@@ -57,7 +57,7 @@ public class PasswordRegController : MonoBehaviour
     {
         GameModel.RegisterPlayer(Playername.text, Password.text);
         HidePanels();
-        SceneManager.LoadScene("TutMS2");
+        SceneManager.LoadScene("LoginRegister");
     }
     // Start is called before the first frame update
     void Start()
