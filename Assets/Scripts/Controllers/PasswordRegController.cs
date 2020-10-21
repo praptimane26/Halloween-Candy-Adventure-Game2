@@ -40,7 +40,7 @@ public class PasswordRegController : MonoBehaviour
         {
             case GameModel.PasswdMode.OK:
                 HidePanels();
-                SceneManager.LoadScene("LoginRegister");
+                SceneManager.LoadScene("Gamescreen");
                 break;
             case GameModel.PasswdMode.NeedName:
                 ShowRegPanel();
@@ -57,7 +57,7 @@ public class PasswordRegController : MonoBehaviour
     {
         GameModel.RegisterPlayer(Playername.text, Password.text);
         HidePanels();
-        SceneManager.LoadScene("LoginRegister");
+        SceneManager.LoadScene("Gamescreen");
     }
     // Start is called before the first frame update
     void Start()
