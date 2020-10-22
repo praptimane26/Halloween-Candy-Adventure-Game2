@@ -9,6 +9,7 @@ public class ConnectGameModel : MonoBehaviour
     void Start()
     {
         GameModel.Name = "Halloween Candy";
+        GameModel.SetupGame();
         GameModel.MakeGame();
     }
 
