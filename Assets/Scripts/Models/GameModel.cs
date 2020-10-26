@@ -15,6 +15,7 @@ public static class GameModel
 {
 
     static String _name;
+    public static bool started = false;
 
     public static string Name
     {
@@ -90,15 +91,22 @@ public static class GameModel
         if (!GameModel.ds.haveLocations())
         {
 
-            Location forest, castle;
-            currentLocale = GameModel.ds.storeNewLocation("Forest", " Run!! ");
+            Location MirrorRoom , VortexRoom, SpikeRoom ;
+            currentLocale = GameModel.ds.storeNewLocation("MirrorRoom", " Get out of this room as quickly as possible but how? hint 'go north'");
 
-            forest = currentLocale;
+            MirrorRoom = currentLocale;
 
-            forest.addLocation("North", "Castle", "Crocodiles");
+            MirrorRoom.addLocation("North", "Vortex Room", "Lots and Lots of mirrors");
 
-            castle = forest.getLocation("North");
-            castle.addLocation("South", forest);
+            VortexRoom = MirrorRoom.getLocation("North");
+            VortexRoom.addLocation("South", MirrorRoom);
+
+            
+            VortexRoom.addLocation("East", "Spike Room", "Are you afraid of getting hurt? Well then you shouldn't have walked in here");
+            SpikeRoom = VortexRoom.getLocation("East");
+            SpikeRoom.addLocation("West", VortexRoom);
+            
+            
 
 
             startLocation = currentLocale; // this might be redundant
@@ -107,41 +115,7 @@ public static class GameModel
             currentLocale = GameModel.ds.GetFirstLocation();
 
     }
-    //{
-    //    Location hospitalHallway, mirrorRoom;
-    //    currentLocale = new Location
-    //    {
-    //        Name = "Hospital Hallway",
-    //        Story = " It is a dark room, you hear something coming towards you\n You need to get out of this room before that thing comes any closer\n\n Hint : 'go North' and maybe you will survive!"
-    //    };
-    //    hospitalHallway = currentLocale;
 
-    //    hospitalHallway.addLocation("North", "MirrorRoom", "You're surrounded by mirrors, but there is a way to get out only if you figure out which mirror to look behind \n \n Hint:'go south'");
-
-
-    //    mirrorRoom = hospitalHallway.getLocation("North");
-    //    mirrorRoom.addLocation("South", hospitalHallway);
-
-    //    Location vortexRoom;
-    //    eastLocation = new Location
-    //    {
-    //        Name = "Vortex",
-    //        Story = "hello welcome to the vortex room"
-    //    };
-
-    //    vortexRoom = eastLocation;
-
-    //    vortexRoom.addLocation("East", "VortexRoom", "this is the vortext room and place you don't want to be in");
-
-    //    vortexRoom = mirrorRoom.getLocation("South");
-    //    vortexRoom.addLocation("East", mirrorRoom);
-
-    //}
-
-    public static string DisplayStory()
-    {
-        return GameModel.currentLocale.Name + "\n " + GameModel.currentLocale.Story;
-    }
 
 }
 

@@ -570,7 +570,7 @@ Transform:
   m_Children:
   - {fileID: 465006785}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &852124749
 GameObject:
@@ -719,12 +719,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'Welcome to Halloween Candy! Are you ready for a mind boggling night ahead
-    of you? Remember not to be dead when you leave the house!
-
-
-    Get ready to
-    be haunted...'
+  m_Text: 
 --- !u!222 &1084737286
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1560,7 +1555,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2054123268
 MonoBehaviour:
@@ -1571,6 +1566,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 2054123266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8f45d935b1da28438015438b4f7b1d6, type: 3}
+  m_Script: {fileID: 11500000, guid: 569063853e3416b47b2d5bf215ac0ecc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

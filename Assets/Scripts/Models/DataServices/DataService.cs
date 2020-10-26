@@ -188,8 +188,13 @@ public class DataService  {
             Wealth = pWealth
 
         };
-        _connection.InsertOrReplace(player);
+        _connection.Insert(player);
         return player;
+    }
+
+    public void storePlayer (Player pPlayer)
+    {
+        _connection.InsertOrReplace(pPlayer);
     }
 
     public Player getPlayer(string pPlayerName)
