@@ -45,7 +45,7 @@ using System.IO;
                                 nextLocale = GameModel.currentLocale.getLocation("North");
                                 if (nextLocale == null)
                                 {
-                                    strResult = "Sorry can't go North " + GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
+                                    strResult = "Sorry can't go North " + GameModel.currentLocale.Name + "  " + GameModel.currentLocale.Story;
                                 }
                                 else
                                 {
@@ -59,7 +59,7 @@ using System.IO;
                                 nextLocale = GameModel.currentLocale.getLocation("South");
                                 if (nextLocale == null)
                                 {
-                                    strResult = "Sorry can't go South " + GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
+                                    strResult = "Sorry can't go South " + GameModel.currentLocale.Name + "  " + GameModel.currentLocale.Story;
                                 }
                                 else
                                 {
@@ -83,7 +83,22 @@ using System.IO;
                                 strResult = GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
                             }
                             break;
-                            default:
+
+                        case "west":
+                            nextLocale = GameModel.currentLocale.getLocation("West");
+                            if (nextLocale == null)
+                            {
+                                strResult = "Sorry can't go West" + GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
+                            }
+                            else
+                            {
+                                GameModel.currentLocale = nextLocale;
+                                GameModel.ds.storePlayer(GameModel.currentPlayer);
+                                GameModel.currentPlayer.LocationId = nextLocale.Id;
+                                strResult = GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
+                            }
+                            break;
+                        default:
                                 Debug.Log(" do not know how to go there");
                                 strResult = "Do not know how to go there";
                                 break;

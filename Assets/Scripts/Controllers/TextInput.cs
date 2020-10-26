@@ -16,7 +16,7 @@ public class TextInput : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        playerName = GameModel.currentPlayer != null ? "Hello" + GameModel.currentPlayer.Name + ".\n" : "";
+        playerName = GameModel.currentPlayer != null ? "Hello " + GameModel.currentPlayer.Name + "!\n " : "";
         //output.text = GameModel.DisplayStory();
         output.text = playerName + GameModel.currentLocale.Name + "" + GameModel.currentLocale.Story;
 

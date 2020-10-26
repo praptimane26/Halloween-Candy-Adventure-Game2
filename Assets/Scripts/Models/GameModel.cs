@@ -36,10 +36,6 @@ public static class GameModel
     public static Location startLocation;
     public static DataService ds = new DataService("HalloweenCandy.db");
 
-    //public static Location currentLocale;
-    //public static Location eastLocation;
-    //public static Player currentPlayer;
-    //public static DataService ds = new DataService("HalloweenCandy.db");
 
     public enum PasswdMode
     {
@@ -91,30 +87,38 @@ public static class GameModel
         if (!GameModel.ds.haveLocations())
         {
 
-            Location MirrorRoom , VortexRoom, SpikeRoom ;
-            currentLocale = GameModel.ds.storeNewLocation("MirrorRoom", " Get out of this room as quickly as possible but how? hint 'go north'");
+            Location MirrorRoom , VortexRoom, SpikeRoom, HospitalHallway ;
+            currentLocale = GameModel.ds.storeNewLocation("MirrorRoom ", " \n" + "Quick close your eyes and do not look at yourself in any of the mirrors, you need to get out of here  hint 'go north'");
 
             MirrorRoom = currentLocale;
 
-            MirrorRoom.addLocation("North", "Vortex Room", "Lots and Lots of mirrors");
+            MirrorRoom.addLocation("North", "Vortex Room","\n" + "Ah welcome! You have found your way into the North side of the house, the Vortex Room, maintain your balance and try getting to the end of this room hint 'go east or go south' it's your call really!");
 
             VortexRoom = MirrorRoom.getLocation("North");
             VortexRoom.addLocation("South", MirrorRoom);
 
             
-            VortexRoom.addLocation("East", "Spike Room", "Are you afraid of getting hurt? Well then you shouldn't have walked in here");
+            VortexRoom.addLocation("East", "Spike Room","\n" + "Are you afraid of getting hurt? Well then you shouldn't have walked in here, is there really a safe place in this house? hint 'go west'");
             SpikeRoom = VortexRoom.getLocation("East");
-            SpikeRoom.addLocation("West", VortexRoom);
+            SpikeRoom.addLocation("North", VortexRoom);
+
+            SpikeRoom.addLocation("West", "Hospital Hallway","\n" + "The patients are sleeping try not to wake them up while you're here, they won't be happy about it!");
+            HospitalHallway = SpikeRoom.getLocation("West");
+            HospitalHallway.addLocation("East", SpikeRoom);
+
+
             
             
 
 
-            startLocation = currentLocale; // this might be redundant
+            //startLocation = currentLocale; // this might be redundant
         }
         else
             currentLocale = GameModel.ds.GetFirstLocation();
 
     }
+
+
 
 
 }
