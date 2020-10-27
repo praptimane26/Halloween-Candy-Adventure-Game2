@@ -87,29 +87,28 @@ public static class GameModel
         if (!GameModel.ds.haveLocations())
         {
 
-            Location MirrorRoom , VortexRoom, SpikeRoom, HospitalHallway ;
-            currentLocale = GameModel.ds.storeNewLocation("MirrorRoom ", " \n" + "Quick close your eyes and do not look at yourself in any of the mirrors, you need to get out of here  hint 'go north'");
+            Location MirrorRoom , VortexRoom, SpikeRoom, HospitalHallway, GhostAffair ;
+            currentLocale = GameModel.ds.storeNewLocation("MirrorRoom ", " \n" + "Quick close your eyes and do not look at yourself in any of the mirrors, you need to get out of here" + "\n" + "hint 'go north'");
 
             MirrorRoom = currentLocale;
 
-            MirrorRoom.addLocation("North", "Vortex Room","\n" + "Ah welcome! You have found your way into the North side of the house, the Vortex Room, maintain your balance and try getting to the end of this room hint 'go east or go south' it's your call really!");
+            MirrorRoom.addLocation("North", "Vortex Room","\n" + "Ah welcome! You have found your way into the North side of the house, the Vortex Room, maintain your balance and try getting to the end of this room" + "\n" + " hint : go east / go south!");
 
             VortexRoom = MirrorRoom.getLocation("North");
             VortexRoom.addLocation("South", MirrorRoom);
 
             
-            VortexRoom.addLocation("East", "Spike Room","\n" + "Are you afraid of getting hurt? Well then you shouldn't have walked in here, is there really a safe place in this house? hint 'go west'");
+            VortexRoom.addLocation("East", "Spike Room","\n" + "Are you afraid of getting hurt? Well then you shouldn't have walked in here, is there really a safe place in this house?" + "\n" + " hint : go west / go north!");
             SpikeRoom = VortexRoom.getLocation("East");
             SpikeRoom.addLocation("North", VortexRoom);
 
-            SpikeRoom.addLocation("West", "Hospital Hallway","\n" + "The patients are sleeping try not to wake them up while you're here, they won't be happy about it!");
+            SpikeRoom.addLocation("West", "Hospital Hallway","\n" + "The patients are sleeping try not to wake them up while you're here, they won't be happy about it!" + "\n" + " hint : go right / go east!");
             HospitalHallway = SpikeRoom.getLocation("West");
             HospitalHallway.addLocation("East", SpikeRoom);
 
-
-            
-            
-
+            HospitalHallway.addLocation("Right", "Ghost Affair", "\n" + "Are you here to romance the ghost? Be careful she may not be in a good mood, how about you avoid her tonight!" + "\n" + " hint : go west" );
+            GhostAffair = HospitalHallway.getLocation("Right");
+            GhostAffair.addLocation("West", HospitalHallway);
 
             //startLocation = currentLocale; // this might be redundant
         }

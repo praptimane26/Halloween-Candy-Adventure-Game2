@@ -98,12 +98,30 @@ using System.IO;
                                 strResult = GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
                             }
                             break;
+
+                        case "right":
+                            nextLocale = GameModel.currentLocale.getLocation("Right");
+                            if (nextLocale == null)
+                            {
+                                strResult = "Sorry can't go Right" + GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
+                            }
+                            else
+                            {
+                                GameModel.currentLocale = nextLocale;
+                                GameModel.ds.storePlayer(GameModel.currentPlayer);
+                                GameModel.currentPlayer.LocationId = nextLocale.Id;
+                                strResult = GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
+                            }
+                            break;
                         default:
                                 Debug.Log(" do not know how to go there");
                                 strResult = "Do not know how to go there";
                                 break;
                         }// end switch
                         break;
+
+
+
                     default:
                         Debug.Log("Do not understand");
                         strResult = "Do not understand";
