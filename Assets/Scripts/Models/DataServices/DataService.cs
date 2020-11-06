@@ -12,8 +12,9 @@ using System.Collections.Generic;
 public class DataService  {
 
 	private SQLiteConnection _connection;
+    public SQLiteConnection Connection { get { return _connection; } }
 
-	public DataService(string DatabaseName){
+    public DataService(string DatabaseName){
 
 #if UNITY_EDITOR
             var dbPath = string.Format(@"Assets/StreamingAssets/{0}", DatabaseName);
