@@ -16,7 +16,7 @@ public class TestJsnDropNetworkService : MonoBehaviour
         Debug.Log("Received items " + pReceivedList.Count());
         foreach (Player lcReceived in pReceivedList)
         {
-            Debug.Log("Received {" + lcReceived.PlayerID + "," + lcReceived.Password + "," + lcReceived.HighScore.ToString()+"}");
+            Debug.Log("Received {" + lcReceived.Name + "," + lcReceived.Password + "," + lcReceived.HighScore.ToString()+"}");
         }// for
 
         // To do: produce an appropriate response
@@ -26,14 +26,17 @@ public class TestJsnDropNetworkService : MonoBehaviour
     {
         #region Test jsn drop
         JSONDropService jsDrop = new JSONDropService { Token = "6f26d3ba-60ae-484b-ac42-613fcf21fa19" };
-        
+
         // Create table person
         jsDrop.Create<Player, JsnReceiver>(new Player
         {
-            PlayerID = 0,
-            HighScore = 0,
-            Password = "***************************"
+            Name = "ododododododod",
+            Password = "*********",
+            HighScore = 0
         }, jsnReceiverDel);
+
+        
+    
         /*
         // Store people records
         jsDrop.Store<tblPerson,JsnReceiver> (new List<tblPerson>

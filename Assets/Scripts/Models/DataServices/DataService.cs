@@ -106,7 +106,17 @@ public class DataService  {
         _connection.CreateTable<ToFrom>();
         _connection.CreateTable<Player>();
 
+        GameModel.jsDrop.Create<Player, JsnReceiver>(new Player
+        {
+            Name = "ododododododod",
+            Password = "*********",
+            HighScore = 0
+        },GameModel.jsnReceiverDel);
+
+
     }
+
+
 
     // Locations and their relationships 
     public IEnumerable<Location> GetLocations()

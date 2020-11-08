@@ -13,7 +13,7 @@ using UnityEngine.UI;
 
 public static class GameModel
 {
-
+    public static JSONDropService jsDrop = new JSONDropService { Token = "6f26d3ba-60ae-484b-ac42-613fcf21fa19" };
     static String _name;
     public static bool started = false;
 
@@ -30,6 +30,9 @@ public static class GameModel
 
     }
 
+    //Network Connection
+
+    
     public static Location currentLocale;
 
     public static Player currentPlayer = null;
@@ -69,10 +72,22 @@ public static class GameModel
         return result;
     }
 
+    public static void jsnReceiverDel(JsnReceiver pReceived)
+    {
+        Debug.Log(pReceived.JsnMsg + " ..." + pReceived.Msg);
+        // To do: parse and produce an appropriate response
+    }
     public static void RegisterPlayer(string pName, string pPassword)
     {
-
+        List<Player> PlayerList = new List<Player>();
+        PlayerList.Add(currentPlayer);
         GameModel.currentPlayer = GameModel.ds.storeNewPlayer(pName, pPassword, GameModel.currentLocale.Id, 100, 200);
+
+        GameModel.jsDrop.Store<Player, JsnReceiver>(PlayerList, jsnReceiverDel);
+        //    (new List<tblPerson>
+        //{
+        //    new tblPerson{ Name = GameModel.currentPlayer.Name, Password = GameModel.currentPlayer.Password, LocationId = GameModel.currentPlayer.LocationId, HighScore = GameModel.currentPlayer.HighScore, Health = GameModel.currentPlayer.Health, Wealth = GameModel.currentPlayer.Wealth}
+        //}, jsnReceiverDel);
     }
 
     public static void SetupGame()
