@@ -32,7 +32,8 @@ public class TestJsnDropNetworkService : MonoBehaviour
         {
             Name = "ododododododod",
             Password = "*********",
-            HighScore = 0
+            HighScore = 0,
+            Score = 0
         }, jsnReceiverDel);
 
         

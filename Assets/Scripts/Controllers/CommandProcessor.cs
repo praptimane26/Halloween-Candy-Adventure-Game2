@@ -51,6 +51,8 @@ using System.IO;
                                 {
                                     GameModel.currentLocale = nextLocale;
                                     GameModel.currentPlayer.LocationId = nextLocale.Id;
+                                    //ScoringSystem Scorer = new ScoringSystem();
+                                    //GameModel.currentPlayer = Scorer.applyScore(GameModel.currentPlayer);
                                     strResult = GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
                                 }
 
@@ -63,8 +65,11 @@ using System.IO;
                                 }
                                 else
                                 {
+
                                     GameModel.currentLocale = nextLocale;
                                     GameModel.ds.storePlayer(GameModel.currentPlayer);
+                                    //ScoringSystem Scorer = new ScoringSystem();
+                                    //GameModel.currentPlayer = Scorer.applyScore(GameModel.currentPlayer);
                                     GameModel.currentPlayer.LocationId = nextLocale.Id;
                                     strResult = GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
                                 }
@@ -80,6 +85,8 @@ using System.IO;
                                 GameModel.currentLocale = nextLocale;
                                 GameModel.ds.storePlayer(GameModel.currentPlayer);
                                 GameModel.currentPlayer.LocationId = nextLocale.Id;
+                                //ScoringSystem Scorer = new ScoringSystem();
+                                //GameModel.currentPlayer = Scorer.applyScore(GameModel.currentPlayer);
                                 strResult = GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
                             }
                             break;
@@ -95,6 +102,8 @@ using System.IO;
                                 GameModel.currentLocale = nextLocale;
                                 GameModel.ds.storePlayer(GameModel.currentPlayer);
                                 GameModel.currentPlayer.LocationId = nextLocale.Id;
+                                //ScoringSystem Scorer = new ScoringSystem();
+                                //GameModel.currentPlayer = Scorer.applyScore(GameModel.currentPlayer);
                                 strResult = GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
                             }
                             break;
@@ -110,6 +119,8 @@ using System.IO;
                                 GameModel.currentLocale = nextLocale;
                                 GameModel.ds.storePlayer(GameModel.currentPlayer);
                                 GameModel.currentPlayer.LocationId = nextLocale.Id;
+                                //ScoringSystem Scorer = new ScoringSystem();
+                                //GameModel.currentPlayer = Scorer.applyScore(GameModel.currentPlayer);
                                 strResult = GameModel.currentLocale.Name + " " + GameModel.currentLocale.Story;
                             }
                             break;

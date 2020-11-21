@@ -13,6 +13,7 @@ public class Player
     private int health;
     private int wealth;
     private string password;
+    
 
     // what about inventory?
 
@@ -25,6 +26,7 @@ public class Player
     public int Wealth { get => wealth; set => wealth = value; }
     public string Password { get => password; set => password = value; }
     public int HighScore { get; set; }
+    public int Score { get; set; }
 }
 
 

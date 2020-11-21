@@ -35,7 +35,7 @@ public class TextInput : MonoBehaviour
         output.text = playerName + aCmd.Parse(arg0);
 
         input.text = "";
-        input.ActivateInputField();
+        //input.ActivateInputField();
 
 
 

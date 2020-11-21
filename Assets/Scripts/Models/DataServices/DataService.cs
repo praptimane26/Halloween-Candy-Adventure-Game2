@@ -106,12 +106,12 @@ public class DataService  {
         _connection.CreateTable<ToFrom>();
         _connection.CreateTable<Player>();
 
-        GameModel.jsDrop.Create<Player, JsnReceiver>(new Player
-        {
-            Name = "ododododododod",
-            Password = "*********",
-            HighScore = 0
-        },GameModel.jsnReceiverDel);
+        //GameModel.jsDrop.Create<Player, JsnReceiver>(new Player
+        //{
+        //    Name = "ododododododod",
+        //    Password = "*********",
+        //    HighScore = 0
+        //},GameModel.jsnReceiverDel);
 
 
     }
@@ -171,6 +171,16 @@ public class DataService  {
         return pLocation; 
     }
 
+    public Player playerScore(int pScore)
+    {
+        return _connection.Table<Player>().Where(s => s.Score == pScore).FirstOrDefault();
+    }
+
+    public Player getScorePlayer(Player aPlayer)
+    {
+        return playerScore(aPlayer.Score);
+    }
+
 
     public void storeFromTo(int pFromID, int pToID, string pDirection)
     {
@@ -187,16 +197,14 @@ public class DataService  {
 
     // Player
     public Player storeNewPlayer(string pName,   string pPassword , 
-                            int pLocationId,  int pHealth,
-                            int pWealth)
+                            int pLocationId,  int pScore)
     {
         Player player = new Player
         {
             Name = pName,
             Password = pPassword,
-            LocationId = pLocationId,
-            Health = pHealth,
-            Wealth = pWealth
+            LocationId = pLocationId,    
+            Score = pScore
 
         };
         _connection.Insert(player);

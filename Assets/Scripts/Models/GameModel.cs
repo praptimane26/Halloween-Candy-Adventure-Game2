@@ -31,11 +31,9 @@ public static class GameModel
     }
 
     //Network Connection
-
-    
     public static Location currentLocale;
-
     public static Player currentPlayer = null;
+    public static Text scoreText;
     public static Location startLocation;
     public static DataService ds = new DataService("HalloweenCandy.db");
 
@@ -81,7 +79,7 @@ public static class GameModel
     {
         List<Player> PlayerList = new List<Player>();
         PlayerList.Add(currentPlayer);
-        GameModel.currentPlayer = GameModel.ds.storeNewPlayer(pName, pPassword, GameModel.currentLocale.Id, 100, 200);
+        GameModel.currentPlayer = GameModel.ds.storeNewPlayer(pName, pPassword, GameModel.currentLocale.Id, 0);
 
         GameModel.jsDrop.Store<Player, JsnReceiver>(PlayerList, jsnReceiverDel);
         //    (new List<tblPerson>
@@ -93,6 +91,12 @@ public static class GameModel
     public static void SetupGame()
     {
         ds.CreateDB();
+        GameModel.jsDrop.Create<Player, JsnReceiver>(new Player
+        {
+            Name = "ododododododod",
+            Password = "*********",
+            HighScore = 0
+        }, GameModel.jsnReceiverDel);
 
     }
 

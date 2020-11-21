@@ -14,7 +14,7 @@ using System.Net.Http.Headers;
 using System.Threading.Tasks;
 using System.Reflection;
 using UnityEngine.Networking;
-using UnityEngine;
+
 
 public delegate void ReceiveRecordDelegate<T>(T pStrRecObj);
 public delegate void ReceiveRecordDelegateList<T>(List<T> pStrRecObjList);

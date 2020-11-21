@@ -10,6 +10,7 @@ public class PasswordRegController : MonoBehaviour
     public GameObject PasspromptPanel;
     public InputField Playername;
     public InputField Password;
+    
 
     private void HidePanels()
     {
